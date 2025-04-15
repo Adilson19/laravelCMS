@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//   Route padrao - Parte Frontal do Sistema
+Route::get('/', 'Site\HomeController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Painel Admin - Parte Administrativa do Sistema
+Route::prefix('painel')->group(function (){
+    //  Rotas do painel
+    Route::get('/', 'Admin\HomeController@index');
+}); 
