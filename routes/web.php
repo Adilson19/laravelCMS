@@ -18,5 +18,6 @@ Route::get('/', 'Site\HomeController@index');
 // Painel Admin - Parte Administrativa do Sistema
 Route::prefix('painel')->group(function (){
     //  Rotas do painel
-    Route::get('/', 'Admin\HomeController@index');
+    Route::get('/', 'Admin\HomeController@index')->name('admin');
+    Route::get('login', 'Admin\Auth\LoginController@index')->name('login');
 }); 

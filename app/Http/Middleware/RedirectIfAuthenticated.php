@@ -21,7 +21,8 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                //  Colocando o nome da rota admin como aquela que ira o usuario nao logado
+                return redirect()->route('admin');
             }
         }
 
